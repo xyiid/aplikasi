@@ -1,41 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 char map[10][20];
 char player = '^';
-int x = 3 ,  y = 5;
+int x=3, y=5;
 
-   void generatemap();
-    void displaymap();
+//void generatemap();
 
-int main()
+
+void main()
 {
-    system("cls");
-    void generatemap();
-    void displaymap();
-    return 0;
+    int score;
+    char move;
+    
+    do
+    {
+        system("cls");
+        generatemap();
+        displaymap();
+        move = getch();
+
+        switch(move)
+        {
+            case 'w' :
+            y--;
+            break;
+            case 's' :
+            y++;
+            break;
+            case 'a' :
+            x--;
+            break;
+            case 'd' :
+            x++;
+            break;
+        }
+    }while(score < 10);
 }
 
-void generatemap(){
+int generatemap() 
+{
+    system("cls");
     int i,j;
     for (i = 0; i < 10; i++){
-        for (j = 0; j < 20; j++){
-            map[i][j] = '0';
+        for (j = 0; j < 20; j++)
+        {
+            map[i][j] = ' ';
         }
+        printf("\n");
     }
-    map [y][x] = player;
+    map[x][y] = player;
 }
 
 void displaymap()
 {
     int i,j;
-    for (i = 0; i < 10; i++)
-    {
-     for (j = 0; j < 20; j++)
-     {
-        printf("%c", map[i][j]);
-     }
+    for (i = 0; i < 10; i++){
+        for (j = 0; j < 20; j++)
+        {
+            printf("%c", map[i][j]);
+        }
         printf("\n");
     }
-    
 }

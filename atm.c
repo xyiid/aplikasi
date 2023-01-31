@@ -1,4 +1,13 @@
-{
+// Online C compiler to run C program online
+#include <stdio.h>
+//#include <windows.h>
+
+void banner(){
+    printf("========================\n");
+    printf("==========  ABC  =======\n");
+    printf("========================\n");
+}
+int main() {
     int kode, pin, pilih, saldo = 100000, tarik, masuk;
     banner();
 
